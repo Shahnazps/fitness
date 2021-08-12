@@ -14,8 +14,6 @@ class DevicePage extends StatefulWidget {
 class _DevicePageState extends State<DevicePage> {
   void connectWithGoogleFit() async {
     final GoogleSignIn googleSignIn = GoogleSignIn(
-        // clientId:
-        //     '741489626072-e4e97kqpiudfpttepic5d8mkq02vmghq.apps.googleusercontent.com',
         // scopes: <String>[
         //   'email',
         //   'https://www.googleapis.com/auth/fitness.activity.read',
@@ -31,6 +29,7 @@ class _DevicePageState extends State<DevicePage> {
     print("Felixa : googleUser $googleUser");
     final GoogleSignInAuthentication googleSignInAuthentication =
         await googleUser.authentication;
+    print("Felixa : Authentication ${googleSignInAuthentication.idToken}");
     String serverAuthToken = googleSignInAuthentication.serverAuthCode;
     print('token');
     print(serverAuthToken);
